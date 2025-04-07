@@ -27,10 +27,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     lyrics = response['choices'][0]['message']['content']
 
-    await update.message.reply_text(lyrics + "
-
-Do you want a full song (lyrics + audio)? Reply 'Yes' or 'No'.")
-
+    await update.message.reply_text(lyrics + "\nDo you want a full song (lyrics + audio)? Reply 'Yes' or 'No'.")
 if __name__ == "__main__":
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
